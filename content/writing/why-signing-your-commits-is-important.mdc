@@ -1,0 +1,85 @@
+---
+title: Why signing your commits is important
+draft: false
+date: 2024-03-31
+---
+
+# Why signing your commits is important
+
+The recent uproar in the tech community over the [xz backdoor incident](https://www.heise.de/news/Hintertuer-in-xz-Bibliothek-gefaehrdet-SSH-Verbindungen-9671317.html)
+has brought to light a critical aspect of code security: commit signing.
+
+In all this chaos, I stumbled upon [a tweet](https://x.com/hasherezade/status/1774268700905935013) highlighting the risks
+associated with unsigned commits, including the potential for identity spoofing.
+The tweet suggested that maintainers could potentially introduce malicious code under someone else's identity.
+
+Curious about the ease of commit spoofing, I set up a virtual machine, installed Git, and began my experiment — this later turned out to be the most challenging part.
+
+First I had to find my potential victim.
+My search on GitHub led me to influential developers who had not signed their recent commits (as visible by the :UBadge{label="Verified" color="blue" variant="subtle" size="xs"}-tag next to commits).
+One such developer was Guillermo Rauch, CEO of [Vercel](https://vercel.app/).
+
+To find his exact username and email address, I cloned one of his repositories
+and inspected a recent commit using the `git show` command.
+
+```sh
+$ git clone [repository URL redacted]
+$ git show [commit ID redacted]
+```
+
+:::UAlert
+---
+description: I have redacted the commit id as well as the repository URL, as I don't want people to blatently copy my actions.
+---
+:::
+
+The output revealed the author's name and email address at the top of the commit.
+
+```
+commit [commit ID redacted] (HEAD -> main, origin/main, origin/HEAD)
+Author: Guillermo Rauch <[email redacted]>
+Date:   Sun Mar 3 17:23:51 2024 -0800
+...
+```
+
+Armed with this information, I configured Git with Guillermo's name and email:
+
+```sh
+$ git config --global user.name "Guillermo Rauch"
+$ git config --global user.email "[email redacted]"
+```
+
+Next, I committed to a newly created repository:
+
+```sh
+$ echo "Spoofing test" > README.txt
+$ git add README.txt
+$ git commit -m "init. commit"
+$ git push -u origin main
+```
+
+And just like that, it appeared as if the CEO of Vercel had contributed to my  [modest repo](https://github.com/trbndev/git-spoofing/commit/2cb7d7f4fe06652f80f31130b7120227fb226156)
+
+![Screenshot of the commit](/images/rauchg-commit-screenshot.png)
+
+The potential consequences of such an act are far-reaching.
+Take the xz backdoor scenario: what if JiaT75 was merely a victim of commit spoofing
+and had no actual involvement with the backdoor? (this is exclusively theoretical)
+
+Imagine a disgruntled colleague deleting production data and pinning the blame on you.
+Explaining that to your boss would be no small task.
+
+Thankfully, GitHub offers a safeguard against such mischief:
+the Verified badge ( :UBadge{label="Verified" color="blue" variant="subtle" size="xs"} / :UBadge{label="Unverified" color="orange" variant="subtle" size="xs"} ).
+This badge appears next to your commits when you sign them with a GPG key, which is also linked to your GitHub account.
+
+Another best practice is enabling “Vigilant mode,” which marks all unsigned commits as unverified.
+
+It's puzzling why such a crucial feature isn't enabled by default,
+as it would significantly deter these types of attacks by making unverified commits immediately noticeable.
+
+---
+
+Read more about signing commits on GitHub Documentation:
+
+[https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
