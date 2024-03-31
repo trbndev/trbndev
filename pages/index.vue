@@ -61,8 +61,9 @@ useSeoMeta({
           <div v-for="writing in list" :key="writing._path"
             class="hover:cursor-pointer select-none hover:bg-black/20 p-3 -m-3 rounded-lg">
             <ULink :to="writing._path">
-              <div class="flex gap-4 items-center">
+              <div class="flex gap-4 items-center justify-between">
                 <h4>{{ writing.title }}</h4>
+                <span class="opacity-50">{{ new Date(writing.date).toLocaleDateString() }}</span>
               </div>
               <p class="opacity-80 line-clamp-1">{{ writing.description }}</p>
             </ULink>
