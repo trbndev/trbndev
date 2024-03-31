@@ -78,8 +78,12 @@ Another best practice is enabling “Vigilant mode,” which marks all unsigned 
 It's puzzling why such a crucial feature isn't enabled by default,
 as it would significantly deter these types of attacks by making unverified commits immediately noticeable.
 
----
-
 Read more about signing commits on GitHub Documentation:
 
 [https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+
+---
+
+**Edit**: It is important to mention, that this doesn't allow you to push to a repository you don't have access to.
+You can only push to repositories you have write access to. But as I have mentioned with
+the example of a disgruntled colleague, this could still be a problem.
