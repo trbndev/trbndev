@@ -1,0 +1,37 @@
+---
+title: Warp-Themes
+status:
+    label: Archived
+    color: orange
+---
+
+
+Warp-Themes was a visual theme builder for the [Warp-Terminal](https://warp.dev), initiated in August 2022. Despite its potential,
+the project was archived a month later due to time constraints in maintaining it.
+
+![Warp-Themes Demo](https://github.com/trbndev/warp-themes/raw/main/.github/assets/demo_changing_colors.gif)
+
+Beginning as a whimsical idea (*Schnappsidee*) it blossomed into a full-fledged project that even piqued the interest of the Warp team.
+
+The application, developed with NextJS and TailwindCSS using DaisyUI, was deployed on Vercel.
+It featured a live preview of a mock Warp terminal and an installation wizard to assist users with theme installation.
+A simple iTerm2 to Warp theme converter was also in development, reaching an experimental yet usable state.
+
+The project was archived as I embarked on my vocational training in September 2022, which required my full attention.
+
+I am pleased to see that the Warp team has since taken the visual theme builder under their wing,
+incorporating it into their new [Terminal-Themes](https://terminal-themes.com/create-theme) platform.
+
+As my primary operating system is now Windows, my use of Warp has ceased,
+and further development of Warp-Themes is highly unlikely &mdash; unless there is a significant demand for it.
+
+::UAlert
+---
+title: Heads up!
+description: Are you interested in the further development of Warp-Themes? Contact me via mail and if there is enough demand for it, I will begin with the development of an improved v2.
+class: "not-prose"
+---
+::
+
+The source code for Warp-Themes is available on [GitHub](https://github.com/trbndev/warp-themes).
+
