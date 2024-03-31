@@ -1,0 +1,21 @@
+---
+title: Warp-Companion
+status:
+    label: Archived
+    color: orange
+---
+
+Warp-Companion was an extension for Visual Studio Code which syncs your current selected
+color theme with Warp.
+
+![Warp-Companion Demo](https://github.com/trbndev/warp-companion/raw/main/gifs/demo_change_theme.gif)
+
+It has been developed as a companion (as the name suggests) to Warp-Themes.
+
+It was heavily inspired by [iTerm2 Theme Sync](https://marketplace.visualstudio.com/items?itemName=tusaeff.vscode-iterm2-theme-sync),
+which I personally used for a long time.
+
+The extension works by opening a custom WebView, which grabs the current color theme
+and then via proxy updates the Warp Theme config file.
+
+As well as Warp-Themes, it has been archived due to the lack of time to maintain it in September 2022.
