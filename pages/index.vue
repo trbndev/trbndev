@@ -6,15 +6,15 @@ defineOgImageComponent("NuxtSeo", {
 useSeoMeta({
   title: 'Torben Haack',
   ogTitle: 'Torben Haack - trbn.dev',
-  description: 'Software Engineer, Computer Science Expert and Media Creator from Berlin.',
-  ogDescription: 'Software Engineer, Computer Science Expert and Media Creator from Berlin.',
+  description: 'Berlin-based IT Specialist in Data and Process Analysis. Enthusiast in System Administration, Networks, Software Engineering and Media Creation. Privacy and Security Advocate.',
+  ogDescription:  'Berlin-based IT Specialist in Data and Process Analysis. Enthusiast in System Administration, Networks, Software Engineering and Media Creation. Privacy and Security Advocate.',
 })
 useSeoMeta({
   ogTitle: 'Torben Haack - trbn.dev',
-  ogDescription: 'Software Engineer, Computer Science Expert and Media Creator from Berlin.',
+  ogDescription: 'Berlin-based IT Specialist in Data and Process Analysis. Enthusiast in System Administration, Networks, Software Engineering and Media Creation. Privacy and Security Advocate.',
   ogUrl: 'https://trbn.dev/',
   twitterTitle: 'Torben Haack - trbn.dev',
-  twitterDescription: 'Software Engineer, Computer Science Expert and Media Creator from Berlin.',
+  twitterDescription:  'Berlin-based IT Specialist in Data and Process Analysis. Enthusiast in System Administration, Networks, Software Engineering and Media Creation. Privacy and Security Advocate.',
   twitterCard: 'summary'
 })
 </script>
@@ -23,12 +23,9 @@ useSeoMeta({
 <template>
   <div class="flex flex-col gap-8">
     <section>
-      <p>Software Engineer, <UTooltip text="Subject Area: Data and Process Analysis">
-          Computer Science Expert</UTooltip>
-        and Media Creator from Berlin.
-      </p>
-      <p>
-        Currently working at <ULink to="https://www.mercedes-benz.com" target="_blank">Mercedes-Benz</ULink>.
+      <p>Berlin-based IT Specialist in Data and Process Analysis. Enthusiast
+			in System Administration, Networks, Software Engineering and Media
+			Creation. Privacy and Security Advocate.
       </p>
     </section>
     <section class="flex flex-col gap-6">
